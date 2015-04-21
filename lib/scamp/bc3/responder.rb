@@ -16,7 +16,7 @@ class Scamp
 
 			def initialize(initial_http_response_object, subsequent_post_url)
 				@initial_http_response_object = initial_http_response_object
-				@subsequent_post_uri = URI("#{subsequent_post_url}.text".sub('http', 'https'))
+				@subsequent_post_uri = URI("#{subsequent_post_url}.text".sub('http://', 'https://'))
 				@response_wait_queue = Queue.new
 				@initial_response_used = Mutex.new
 			end
