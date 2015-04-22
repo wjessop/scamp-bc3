@@ -29,7 +29,7 @@ class Scamp
 					http = Net::HTTP.new(subsequent_post_uri.host, subsequent_post_uri.port)
 					http.use_ssl = true
 					http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-					response = http.post(subsequent_post_uri.path, URI.encode_www_form([["content", message]]))
+					http.post(subsequent_post_uri.path, URI.encode_www_form([["content", message]]))
 				end
 			end
 
